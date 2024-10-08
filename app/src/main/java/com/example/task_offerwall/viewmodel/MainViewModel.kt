@@ -50,6 +50,10 @@ class MainViewModel(private val repository: ApiRepository) : ViewModel() {
             _objectType.value = objectResponse.type
             _message.value = objectResponse.message
             _url.value = objectResponse.url
+
+            if (objectResponse.type == "game") {
+                nextObject()
+            }
         }
     }
 }
